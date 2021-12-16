@@ -1,9 +1,22 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
+// 按需引入组件 vant
+import styleImport from 'vite-plugin-style-import';
+
 
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [vue(),
+  styleImport({
+    libs: [
+      {
+        libraryName: 'vant',
+        esModule: true,
+        resolveStyle: (name) => `vant/es/${name}/style`,
+      },
+    ],
+  }),
+  ],
   /**
    * 在生产中服务时的基本公共路径。
    * @default '/'
@@ -44,14 +57,15 @@ export default defineConfig({
       mixins: path.resolve(__dirname, "./src/mixins")
     },
   },
-  css: { // css预处理器 
+  css: {
+    // css预处理器
     preprocessorOptions: {
       scss: {
         additionalData: `
         @import "./src/assets/scss/reset.scss";
         @import "./src/assets/scss/mixin.scss";
         @import "./src/assets/scss/variable.scss";
-        `// 添加公共样式 
+        `// 添加公共样式
       }
     }
   }

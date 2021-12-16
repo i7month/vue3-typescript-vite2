@@ -1,17 +1,20 @@
 <!-- Home -->
 <template>
-  <div class="send">
-    <button @click="send">{{ data.Home }}</button>
-    <h2>{{ count }}</h2>
-    <button @click="handleClick">store</button>
-  </div>
+  <button @click="send">{{ data.Home }}</button>
+  <h2 class="sned2">{{ count }}</h2>
+  <button @click="handleClick">store</button>
+  <van-button type="primary">主要按钮</van-button>
+  <van-button type="success">成功按钮</van-button>
+  <van-button type="default">默认按钮</van-button>
+  <van-button type="warning">警告按钮</van-button>
+  <van-button type="danger">危险按钮</van-button>
 </template>
 
 <script setup lang='ts'>
-import { getUrl } from "@/api/list/home"
+import { getUrl } from "@/api/list/home" // api
 import { reactive, computed } from 'vue'
-import router from '@/router/index'
-import { useStore } from 'vuex';
+import router from '@/router/index' // router
+import { useStore } from 'vuex'; // store
 
 interface DataProps {
   Home: string;
@@ -40,8 +43,9 @@ const send = () => {
 
 
 </script>
+
 <style lang="scss" scoped>
-.send {
+.sned2 {
   color: $l;
 }
 </style>
