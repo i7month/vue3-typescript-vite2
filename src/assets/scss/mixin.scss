@@ -1,0 +1,34 @@
+/* define mixin */
+
+/* flex
+ * @include flex(center, center);
+ */
+@mixin flex($justifyContent: flex-start, $alignItems: flex-start) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}
+/* flexb
+ * @include flexb(space-between, center);
+ */
+ @mixin flexb($justifyContent: space-between, $alignItems: center) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}
+/* flexa
+ * @include flexa(space-around, center);
+ */
+@mixin flexa($justifyContent: space-around, $alignItems: flex-start) {
+  display: flex;
+  align-items: $alignItems;
+  justify-content: $justifyContent;
+}
+/* ellipsis
+ * @include ellipsis;
+ */
+@mixin ellipsis {
+  overflow: hidden;/*超出部分隐藏*/
+  text-overflow:ellipsis;/* 超出部分显示省略号 */
+  white-space: nowrap;/*规定段落中的文本不进行换行 */
+}

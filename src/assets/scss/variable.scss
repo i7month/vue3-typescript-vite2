@@ -1,0 +1,5 @@
+$l: var(--l,#64b687); // 绿色主题
+$h: var(--h,#313131); // 灰色
+$w: var(--w,white); // 白色
+
+// document.getElementsByTagName('body')[0].style.setProperty('--l', 'red'); // 修改全局颜色
